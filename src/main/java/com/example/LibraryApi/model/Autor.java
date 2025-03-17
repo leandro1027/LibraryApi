@@ -8,14 +8,14 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-@Table(name= "Autor", schema = "public")
+@Table(name= "autor", schema = "public")
 @Getter
 @Setter
 public class Autor {
 
     @Id
-    @Column(name = "id", length = 100, nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(name = "nome", length = 100, nullable = false)
