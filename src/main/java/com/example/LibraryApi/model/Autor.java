@@ -28,6 +28,7 @@ public class Autor {
     @Column(name = "nascionalidade", length = 50, nullable = false)
     private String nascionalidade;
 
+    @OneToMany(mappedBy = "autor")
     private List<Livro> Livros;
 
 }
