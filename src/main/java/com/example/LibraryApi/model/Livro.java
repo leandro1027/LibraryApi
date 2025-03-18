@@ -19,6 +19,13 @@ public class Livro {
     @Column(name = "data_publicacao")
     private LocalDate dataPublicacao;
 
-    @Column(name = "data_publicacao")
-    private LocalDate dataPublicacao;
+    @Column(name = "genero", length = 30, nullable = false)
+    private String genero;
+
+    @Column(name = "preco", precision = 18, scale = 2)
+    private Double preco;
+
+    @ManyToOne
+    @JoinColumn(name = "id_autor")
+    private Autor autor;
 }
