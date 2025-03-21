@@ -10,8 +10,11 @@ import java.time.LocalDate;
 @SpringBootApplication
 public class LibraryApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LibraryApiApplication.class, args);
+	public static void main(String[] args){
+		var context = SpringApplication.run(LibraryApiApplication.class, args);
+		AutorRepository repository = context.getBean(AutorRepository.class);
+
+		exemploSalvar(repository);
 	}
 
 	public static  void exemploSalvar (AutorRepository autorRepository) {
@@ -19,7 +22,10 @@ public class LibraryApiApplication {
 		autor.setNome("Leandro");
 		autor.setNascionalidade("Brasileiro");
 		autor.setDataNascimento(LocalDate.of(2004, 8, 9));
-		autorRepository.save(autor);
+		var autorSalvo = autorRepository.save(autor);
+
+		System.out.println("Autor salvo: " + autorSalvo);
+
 	}
 
 
