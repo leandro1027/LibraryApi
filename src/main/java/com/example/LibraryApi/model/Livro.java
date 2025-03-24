@@ -11,7 +11,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-public class Livro {
+public class Livr {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
