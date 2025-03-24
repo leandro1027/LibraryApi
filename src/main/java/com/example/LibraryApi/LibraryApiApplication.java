@@ -2,6 +2,7 @@ package com.example.LibraryApi;
 
 import com.example.LibraryApi.model.Autor;
 import com.example.LibraryApi.repository.AutorRepository;
+import com.example.LibraryApi.repository.LivroRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,12 +13,14 @@ public class LibraryApiApplication {
 
 	public static void main(String[] args){
 		var context = SpringApplication.run(LibraryApiApplication.class, args);
-		AutorRepository repository = context.getBean(AutorRepository.class);
+		AutorRepository autorRepository = context.getBean(AutorRepository.class);
+		LivroRepository livroRepository = context.getBean(LivroRepository.class);
 
-		exemploSalvar(repository);
+		exemploSalvarAutor(autorRepository);
+		exemploSalvarLivro(livroRepository);
 	}
 
-	public static  void exemploSalvar (AutorRepository autorRepository) {
+	public static  void exemploSalvarAutor (AutorRepository autorRepository) {
 		Autor autor = new Autor();
 		autor.setNome("Leandro");
 		autor.setNascionalidade("Brasileiro");
@@ -27,6 +30,8 @@ public class LibraryApiApplication {
 		System.out.println("Autor salvo: " + autorSalvo);
 
 	}
+
+	public  static  void exemploSalvarLivro(LivroRepository livroRepository) {}
 
 
 }
