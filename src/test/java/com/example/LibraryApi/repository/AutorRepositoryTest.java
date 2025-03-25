@@ -70,4 +70,9 @@ public class AutorRepositoryTest {
         repository.delete(maria);
     }
 
+    @Test
+    public void buscarAutorTest(){
+        List<Autor> lista = repository.findAll();
+    }
+
 }
