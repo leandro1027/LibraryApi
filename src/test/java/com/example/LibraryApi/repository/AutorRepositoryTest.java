@@ -1,6 +1,7 @@
 package com.example.LibraryApi.repository;
 
 import com.example.LibraryApi.model.Autor;
+import com.example.LibraryApi.model.Livro;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +15,7 @@ import java.util.UUID;
 public class AutorRepositoryTest {
 
     @Autowired
-    AutorRepository repository;
+    AutorRepository repository; 
 
     @Test
     public void salvarTest(){
@@ -72,7 +73,10 @@ public class AutorRepositoryTest {
 
     @Test
     public void buscarAutorTest(){
-        List<Autor> lista = repository.findAll();
+        UUID id = UUID.fromString("ebfaaec3-2f7e-4dde-8bf0-6702c225147e");
+        Livro livro = repository.findById(id).orElse(null);
+
+
     }
 
 }
